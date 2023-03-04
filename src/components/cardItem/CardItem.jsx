@@ -20,9 +20,7 @@ import {
 import line1 from "../../images/central-line.png";
 
 export default function CardItem({
-  id,
   avatar,
-
   countTweets,
   tweets,
   countFollowers,
@@ -35,20 +33,14 @@ export default function CardItem({
     "colorButton",
     "backgroundColor: #EBD8FF"
   );
+  const [color, setColor] = useState(colorButton);
 
   const handleClick = (e) => {
     if (e.target.name.includes("FOLLOW")) {
-      setButtonClicked(true);
-      setName(countFollowers + 1);
-      setButton("FOLLOWING");
-      setColorButton("#5CD3A8");
-
-      if (buttonClicked === true) {
-        setButtonClicked(false);
-        setName(countFollowers);
-        setButton("FOLLOW");
-        setColorButton("#EBD8FF");
-      }
+      setButtonClicked(!buttonClicked);
+      setName(buttonClicked ? countFollowers : countFollowers + 1);
+      setButton(buttonClicked ? "FOLLOW" : "FOLLOWING");
+      setColor(buttonClicked ? colorButton : "#5CD3A8");
     }
   };
 
@@ -59,7 +51,6 @@ export default function CardItem({
         <LineRight src={line1} alt={line1} />
         <Avatar src={avatar} alt={avatar} />
       </BoxAvatar>
-
       <BoxInfo>
         <BoxTweet>
           <CounTweet>{countTweets}</CounTweet>
@@ -70,7 +61,11 @@ export default function CardItem({
           <Follow>{followers} </Follow>
         </BoxFollow>
       </BoxInfo>
-      <Button name={button} onClick={handleClick}>
+      <Button
+        name={button}
+        onClick={handleClick}
+        style={{ backgroundColor: color }}
+      >
         {button}
       </Button>
     </ProfileCard>

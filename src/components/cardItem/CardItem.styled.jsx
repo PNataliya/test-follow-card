@@ -114,6 +114,7 @@ export const Follow = styled.p`
 
 export const Button = styled.button`
   width: 196px;
+  height: 50px;
   font-family: inherit;
   font-size: ${(p) => p.theme.fontSizes.ms};
   font-weight: ${(p) => p.theme.fontWeights.medium};

@@ -1,5 +1,5 @@
-import { css } from '@emotion/react';
-import { theme } from './theme';
+import { css } from "@emotion/react";
+import { theme } from "./theme";
 
 export const GlobalStyles = css`
   html {
@@ -35,18 +35,27 @@ export const GlobalStyles = css`
   }
   button {
     padding: 0;
-    border: ${theme.borders.none};
+    border: none;
     font: inherit;
     color: inherit;
     background-color: transparent;
     cursor: pointer;
+  }
+  .blackButton {
+    background-color: black;
+    color: white;
+  }
+
+  .whiteButton {
+    background-color: white;
+    color: black;
   }
   a {
     text-decoration: none;
     color: inherit;
   }
   code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
       monospace;
   }
 `;

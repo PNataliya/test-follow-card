@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Container from "../container/Container";
 import CardItem from "../cardItem/CardItem";
 
@@ -21,7 +22,6 @@ export const CardlList = () => {
               tweets,
               countFollowers,
               followers,
-              index,
             }) => (
               <List key={id}>
                 <CardItem
