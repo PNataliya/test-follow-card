@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Container from "../container/Container";
 import CardItem from "../cardItem/CardItem";
 
